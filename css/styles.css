@@ -11,26 +11,34 @@
   --hover-hero-btn-color: #188ce8;
 }
 
-html {
-  box-sizing: border-box;
-}
-
 *,
 ::before,
 ::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
+p,
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-p,
-ul {
-  padding: 0;
+h6 {
   margin: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding-left: 0;
+}
+button {
+  cursor: pointer;
+}
+address {
+  font-style: normal;
+}
+img {
+  display: block;
 }
 
 body {
@@ -45,6 +53,8 @@ body {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .section {
@@ -219,11 +229,10 @@ img {
   font-weight: 700;
   line-height: 1.88;
   letter-spacing: 0.06em;
+  width: max-content;
   align-items: center;
   text-align: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  min-width: 200px;
-  min-height: 50px;
   border-radius: 4px;
   display: block;
   padding: 10px 32px;
@@ -235,7 +244,6 @@ img {
 .hero-btn:focus {
   background-color: var(--hover-hero-btn-color);
   color: var(--white-color);
-  cursor: pointer;
 }
 
 /* advantages */
@@ -299,9 +307,11 @@ img {
 .team-list-item:not(:last-child) {
   margin-right: 30px;
 }
+
 .team-list-img {
   display: block;
 }
+
 .team-list-title {
   font-size: 16px;
   font-weight: 500;
@@ -360,6 +370,7 @@ img {
   border: none;
   border-radius: 4px;
   padding: 6px 22px;
+  border: 1px solid transparent;
 }
 
 .projects-list-item-btns:not(:last-child) {
@@ -371,25 +382,21 @@ img {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   background-color: var(--focus-color);
-  cursor: pointer;
 }
 
 .projects-list {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
+  gap: 30px;
 }
 .projects-list-item {
-  flex-basis: calc((100% / 3) - 30px);
-  margin-left: 30px;
-  margin-top: 30px;
+  flex-basis: calc((100% - 60px) / 3);
 }
 
 .card-content {
   padding: 20px 24px;
 }
-.projects-list-item {
+.card-content {
   border: 1px solid #eeeeee;
 }
 
